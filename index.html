@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TIME??</title>
+
+    <style>
+        body {
+            background-image: url(0.jpg);
+            background-size: cover;
+
+        }
+
+        * {
+            font-size: large;
+
+        }
+
+        h1 {
+            color: rgb(255, 153, 0);
+            margin: 20px;
+            font-size: 60px;
+            text-shadow: 15px 3px 37px rgb(19, 1, 1);
+            position: relative;
+            animation-name: move;
+            animation-duration: 14s;
+            animation-iteration-count: infinite;
+
+        }
+
+        p {
+            color: rgb(255, 0, 0);
+            font-size: x-large;
+        }
+
+        table {
+            background-color: crimson;
+            animation-name: bgColor1;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes bgColor1 {
+            from {
+                background-color: rgb(0, 0, 0);
+            }
+
+            to {
+                background-color: rgb(255, 0, 0);
+            }
+        }
+
+        @keyframes move {
+            0% {
+                left: 0px;
+            }
+
+            50% {
+                left: 700px;
+            }
+
+            100% {
+                left: 0px;
+            }
+        }
+
+
+        #li1,
+        #li2 {
+            color: darkblue;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ARRIVAL TIME</h1>
+    <h2>BẠN MUỐN BIẾT THỜI GIAN NÀO?</h2>
+    <h2>BAO LÂU NỮA THÌ ĐẾN?</h2>
+    <h3>Hãy LỰA và CHỌN nhé ⇩</h3>
+    <table border="4">
+        <tr>
+            <th>
+                <select id="select">
+                    <option>----Hãy lựa từ danh sách phía dưới và chọn ngay bên cạnh ☛☛</option>
+                    <option id="date" value="date">Đã sống bao lâu?</option>
+                    <option id='been' value="been">Yêu/cưới nhau đã qua mấy mùa chuối (been love together)</option>
+                    <option id="tet" value="tet">Còn bao lâu thì đến tết?</option>
+                    <option id="holiday" value="holiday">Các ngày nghĩ/lễ năm 2020 gần đến chưa?</option>
+                </select>
+            </th>
+            <th>
+                <input type="button" value="CHỌN" onclick="loadInputDate()" />
+            </th>
+        </tr>
+    </table> <br>
+
+    <div id="1" style="display: none;">Nhập vào ngày sinh của bạn:
+        <Input id="datelive" TYPE="datetime-local" size="20">
+        <button id="a" onclick="loadCoutLive()">Tính</button>
+
+        <p id='load1'></p>
+    </div>
+
+    <div id="2" style="display: none;">Nhập ngày tình yêu bạn đâm chồi:
+        <Input id="dateLove" TYPE="date" size="20">
+        <button id="b" onclick="loadCoutLove()">Tính</button>
+        <p id='load2'></p>
+        <div id="bonus" style="display: none;">
+            <input type="button" onclick="loveTime()" value="FA biến hình">
+            <p id="loadFa"></p>
+        </div>
+    </div>
+
+    <div id="3" style="display: none;"> <b>Hãy Chọn:</b> <br><br>
+
+        <li id="li1" style="display: block;"> Tết (dương lịch 2020)<br>
+            <button onclick="tet1()">Tính</button>
+            <p id='load3'></p>
+        <li id="li2" style="display: block;"> Tết Nguyên Đán (Canh Tý 2020)<br>
+            <button onclick="tet2()">Tính</button>
+            <p id='load4'></p>
+
+    </div>
+
+    <div id="4" style="display: none;">
+        <form> Chọn ngày/lễ năm 2020:
+            <select id="select2">
+                <option value="2020/01/01">Tết Dương lịch 2020 </option>
+                <option value="01/09/2020">Ngày Học sinh - Sinh viên Việt Nam 9-1</option>
+                <option value="02/03/2020">Ngày thành lập Đảng Cộng sản Việt Nam</option>
+                <option value="02/14/2020">Ngày lễ tình nhân (Valentine)</option>
+                <option value="02/27/2020">Ngày thầy thuốc Việt Nam</option>
+                <option value="03/08/2020">Ngày Quốc tế Phụ nữ</option>
+                <option value="03/20/2020">Ngày Quốc tế hạnh phúc</option>
+                <option value="03/23/2020">Ngày nước sạch thế giới</option>
+                <option value="03/26/2020">Ngày thành lập Đoàn TNCS Hồ Chí Minh</option>
+                <option value="03/27/2020">Ngày Thể Thao Việt Nam</option>
+                <option value="04/01/2020">Ngày Cá tháng tư</option>
+                <option value="04/05/2020">Tết Thanh minh</option>
+                <option value="04/22/2020">Ngày Trái Đất</option>
+                <option value="04/30/2020">Ngày giải phóng miền Nam 2020</option>
+                <option value="05/01/2020">Ngày Quốc tế Lao động</option>
+                <option value="05/07/2020">Ngày chiến thắng Điện Biên Phủ</option>
+                <option value="05/13/2020">Ngày của mẹ</option>
+                <option value="05/19/2020">Ngày sinh chủ tịch Hồ Chí Minh</option>
+                <option value="06/01/2020">Ngày Quốc tế thiếu nhi</option>
+                <option value="06/17/2020">Ngày của cha </option>
+                <option value="06/21/2020">Ngày báo chí Việt Nam</option>
+                <option value="06/28/2020">Ngày gia đình Việt Nam</option>
+                <option value="07/11//2020">Ngày dân số thế giới</option>
+                <option value="07/27/2020">Ngày Thương binh liệt sĩ</option>
+                <option value="07/28/2020">Ngày thành lập công đoàn Việt Nam</option>
+                <option value="08/19/2020">Ngày tổng khởi nghĩa</option>
+                <option value="09/02/2020">Ngày Quốc Khánh </option>
+                <option value="09/10/2020">Ngày thành lập Mặt Trận Tổ quốc Việt Nam</option>
+                <option value="10/01/2020">Ngày quốc tế người cao tuổi</option>
+                <option value="10/10/2020">Ngày giải phóng thủ đô</option>
+                <option value="10/13/2020">Ngày doanh nhân Việt Nam</option>
+                <option value="10/20/2020">Ngày Phụ nữ Việt Nam</option>
+                <option value="10/31/2020">Ngày Hallowen</option>
+                <option value="11/09/2020">Ngày pháp luật Việt Nam</option>
+                <option value="11/20/2020">Ngày Nhà giáo Việt Nam</option>
+                <option value="11/23/2020">Ngày thành lập Hội chữ thập đỏ Việt Nam</option>
+                <option value="12/01/2020">Ngày thế giới phòng chống AIDS</option>
+                <option value="12/19/2020">Ngày toàn quốc Kháng chiến</option>
+                <option value="12/22/2020">Ngày thành lập quân đội nhân dân Việt Nam</option>
+                <option value="12/24/2020">Lễ giáng sinh</option>
+                <option value="01/25//2020">Tết Nguyên Đán (1/1 âm lịch) </option>
+                <option value="02/06/2020">Hội Lim (Tiên Du- Bắc Ninh 13/1 âm lịch) </option>
+                <option value="02/08/2020">Tết Nguyên tiêu (15/1 âm lịch) </option>
+                <option value="02/24/2020">Lễ họi Chùa Trầm (2/2 âm lịch) </option>
+                <option value="03/08/2020">Lễ hội Tây Thiên (15/2 âm lịch) </option>
+                <option value="03/12/2020">Lễ hội Quan Thế Âm (Đà Nẵng 19/2 âm lịch) </option>
+                <option value="04/02/2020">Giỗ tổ Hùng Vương (10/3 âm lịch) </option>
+                <option value="03/26/2020">Tết Hàn thực (3/3 âm lịch) </option>
+                <option value="05/06/2020">Tết Dân tộc Khmer (14/4 âm lịch) </option>
+                <option value="05/07/2020">Lễ Phật Đản (15/4 âm lịch) </option>
+                <option value="06/25/2020">Tết Đoan Ngọ (5/5 âm lịch) </option>
+                <option value="07/23/2020">Lễ hội đình Châu Phú (An Giang 3/6 âm lịch) </option>
+                <option value="07/24/2020">Lễ hội cúng biển Mỹ Long (Trà Vinh 4/6 âm lịch) </option>
+                <option value="07/28/2020">Lễ hội đình - đền Chèm (Hà Nội 8/6 âm lịch) </option>
+                <option value="07/29/2020">Hội chùa Hàm Long (Hà Nội 9/6 âm lịch) </option>
+                <option value="08/12/2020">Lễ hội đình Trà Cổ (Quảng Ninh 23/6 âm lịch) </option>
+                <option value="07/30/2020">Hội kéo ngựa gỗ (Hải Phòng 10/6 âm lịch) </option>
+                <option value="09/02/2020">Vu Lan (15/7 âm lịch) </option>
+                <option value="09/17/2020">Tết Katê (1/8 âm lịch) </option>
+                <option value="10/01/2020">Tết Trung Thu (15/8 âm lịch) </option>
+                <option value="10/25/2020">Tết Trùng Cửu (9/9 âm lịch) </option>
+                <option value="11/24/2020">Tết Trùng Thập (10/10 âm lịch) </option>
+                <option value="12/28/2020">Hội Đình Phường Bông (Nam Định 15/11 âm lịch) </option>
+                <option value="01/07/2021">Hội Vân Lệ (Thanh Hóa 25/11 âm lịch) </option>
+                <option value="02/04/2021">Ông Táo chầu trời (23/12 âm lịch) </option>
+
+            </select>
+            <input type="button" value="Tính" onclick="loadCoutHoliday()" />
+
+        </form>
+        <p id='load5'></p>
+    </div>
+
+
+
+    <script src="index.js"></script>
+    <script src="index2.js"></script>
+
+</body>
+
+</html>
